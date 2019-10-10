@@ -1,7 +1,10 @@
 #!/bin/bash
 set -e
 
-cd automation/Extension/firefox
+cd automation/Extension/webext-instrumentation
+npm install --unsafe-perm
+npm run build
+cd ../firefox
 npm install
 npm run build
 cp dist/*.zip ./openwpm.xpi
